@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "b9665e68-2c62-4e44-b1a1-8e69d56d0210",
+		"name": "LegoSorterDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"demoadmin\",\r\n    \"password\": \"demoadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"demo\",\r\n    \"password\": \"demo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Collection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"demo\",\r\n    \"weight_kg\": 12,\r\n    \"origin\": \"demo\",\r\n    \"origin_url\": \"demo\",\r\n    \"seller\": \"demo\",\r\n    \"description\": \"demo\",\r\n    \"purchase_date\": \"2020\",\r\n    \"cost\": 200,\r\n    \"porto\": 20,\r\n    \"thumbnail_url\": \"demo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/create/collection",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"create",
+								"collection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all collections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/show/all/collections",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"show",
+								"all",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Collection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 8,\r\n        \"name\": \"demoModified\",\r\n        \"weight_kg\": \"12\",\r\n        \"origin\": \"demo667\",\r\n        \"origin_url\": \"demo\",\r\n        \"seller\": \"demo\",\r\n        \"description\": \"demo\",\r\n        \"cost\": \"200\",\r\n        \"porto\": \"20\",\r\n        \"thumbnail_url\": \"demo\",\r\n        \"status\": 10,\r\n        \"createdBy\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/update/collection",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"update",
+								"collection"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single collection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/show/collection/100",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"show",
+								"collection",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
