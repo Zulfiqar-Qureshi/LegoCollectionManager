@@ -10,7 +10,6 @@ const app: Application = Express();
 /*
 * Importing Routes
 */
-import admin from "./routes/admin";
 import user from "./routes/user";
 
 /*
@@ -25,7 +24,6 @@ app.use(cookieParser());
 /*
 * Middleware Routes
 */
-app.use('/admin', admin);
 app.use('/user', user);
 
 connection.getConnection((err) => {
