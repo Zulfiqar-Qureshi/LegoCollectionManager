@@ -11,6 +11,7 @@ const app: Application = Express();
 * Importing Routes
 */
 import user from "./routes/user";
+import collection from "./routes/collection";
 
 
 /*
@@ -26,6 +27,7 @@ app.use(cookieParser());
 * Middleware Routes
 */
 app.use('/user', user);
+app.use('/collections', collection);
 
 
 const PORT = process.env.PORT || 4000;
