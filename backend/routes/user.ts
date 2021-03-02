@@ -3,7 +3,7 @@
 */
 import {Router} from "express";
 const route = Router();
-import UserAuthMiddleware from '../controllers/users/Auth.middleware';
+import UserAuthMiddleware from '../controllers/users/UserAuth.middleware';
 import Login from '../controllers/users/login';
 import CreateCollection from '../controllers/users/collection.create';
 import ShowAllCollections from '../controllers/users/collection.show';

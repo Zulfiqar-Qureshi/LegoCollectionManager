@@ -12,6 +12,7 @@ const app: Application = Express();
 */
 import user from "./routes/user";
 
+
 /*
 * Initializing Middlewares
 */
@@ -26,10 +27,12 @@ app.use(cookieParser());
 */
 app.use('/user', user);
 
+
+const PORT = process.env.PORT || 4000;
 connection.getConnection((err) => {
     if(err) throw err;
-    app.listen(process.env.PORT, () => {
-        console.log(`Server started, PORT: ${process.env.PORT}`);
+    app.listen(PORT, () => {
+        console.log(`Server started, PORT: ${PORT}`);
         console.log(`Connected to DB`)
     });
 })
