@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"robert\",\r\n    \"password\": \"robertpass\"\r\n}",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminpass\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -34,7 +34,12 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Collection",
+			"item": [
 				{
 					"name": "Create Collection",
 					"request": {
@@ -42,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"demo\",\r\n    \"weight_kg\": 12,\r\n    \"origin\": \"demo\",\r\n    \"origin_url\": \"demo\",\r\n    \"seller\": \"demo\",\r\n    \"description\": \"demo\",\r\n    \"purchase_date\": \"2020\",\r\n    \"cost\": 200,\r\n    \"porto\": 20,\r\n    \"thumbnail_url\": \"demo\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Robert Test\",\r\n    \"weight_kg\": 12,\r\n    \"origin\": \"demo\",\r\n    \"origin_url\": \"demo\",\r\n    \"seller\": \"demo\",\r\n    \"description\": \"demo\",\r\n    \"purchase_date\": \"2020\",\r\n    \"cost\": 200,\r\n    \"porto\": 20,\r\n    \"thumbnail_url\": \"demo\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -50,14 +55,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/user/create/collection",
+							"raw": "{{URL}}/collections",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"user",
-								"create",
-								"collection"
+								"collections"
 							]
 						}
 					},
@@ -69,14 +72,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/user/show/all/collections",
+							"raw": "{{URL}}/collections",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"user",
-								"show",
-								"all",
 								"collections"
 							]
 						}
@@ -86,11 +86,11 @@
 				{
 					"name": "Update Collection",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": 8,\r\n        \"name\": \"demoModified\",\r\n        \"weight_kg\": \"12\",\r\n        \"origin\": \"demo667\",\r\n        \"origin_url\": \"demo\",\r\n        \"seller\": \"demo\",\r\n        \"description\": \"demo\",\r\n        \"cost\": \"200\",\r\n        \"porto\": \"20\",\r\n        \"thumbnail_url\": \"demo\",\r\n        \"status\": 10,\r\n        \"createdBy\": 2\r\n    }",
+							"raw": "{\r\n        \"id\": 15,\r\n        \"name\": \"demoModified\",\r\n        \"weight_kg\": \"12\",\r\n        \"origin\": \"demo667\",\r\n        \"origin_url\": \"demo\",\r\n        \"seller\": \"demo\",\r\n        \"description\": \"demo\",\r\n        \"cost\": \"200\",\r\n        \"porto\": \"20\",\r\n        \"thumbnail_url\": \"demo\",\r\n        \"status\": 10,\r\n        \"createdBy\": 2\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -98,14 +98,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/user/update/collection",
+							"raw": "{{URL}}/collections/15",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"user",
-								"update",
-								"collection"
+								"collections",
+								"15"
 							]
 						}
 					},
@@ -113,19 +112,46 @@
 				},
 				{
 					"name": "Show single collection",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/user/show/collection/100",
+							"raw": "{{URL}}/collections/15",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"user",
-								"show",
-								"collection",
-								"100"
+								"collections",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single collection",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/collections/15",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"collections",
+								"15"
 							]
 						}
 					},
