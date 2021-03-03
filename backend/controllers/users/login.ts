@@ -27,11 +27,14 @@ export default (req: Request, res: Response)=>{
             });
             else {
                 if(result !== 'undefined' && result.length > 0){
-                    console.log(result)
                     const {groupname} = result[0];
+
+                    /*
+                    * Make sure that PRIVATE_KEY is present in the environment, otherwise token won't be
+                    * generated!
+                    */
                     //@ts-ignore
-                    
-                    jwt.sign({username, type: groupname}, process.env.PRIVATE_KEY, (err1, token) => {
+                    jwt.sign({username: username, type: groupname}, process.env.PRIVATE_KEY, (err1, token) => {
                         if(err1) res.json({
                             code: 500,
                             message: 'couldn\'t generate token'
@@ -44,7 +47,7 @@ export default (req: Request, res: Response)=>{
                                     maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
                                 })
                                 res.json({
-                                    message: "login as " + groupname + " successful",
+                                    message: `login as ${groupname} successful`,
                                     code: 100
                                 })
                             } else {
@@ -53,7 +56,7 @@ export default (req: Request, res: Response)=>{
                                     maxAge: 2 * 60 * 60 * 1000 // 2 hours
                                 })
                                 res.json({
-                                    message: "login as " + groupname +  " successful",
+                                    message: `login as ${groupname} successful`,
                                     code: 100
                                 })
                             }

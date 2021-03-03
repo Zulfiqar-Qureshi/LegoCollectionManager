@@ -11,6 +11,8 @@ const app: Application = Express();
 * Importing Routes
 */
 import user from "./routes/user";
+import collection from "./routes/collection";
+
 
 /*
 * Initializing Middlewares
@@ -25,11 +27,14 @@ app.use(cookieParser());
 * Middleware Routes
 */
 app.use('/user', user);
+app.use('/collections', collection);
 
+
+const PORT = process.env.PORT || 4000;
 connection.getConnection((err) => {
     if(err) throw err;
-    app.listen(process.env.PORT, () => {
-        console.log(`Server started, PORT: ${process.env.PORT}`);
+    app.listen(PORT, () => {
+        console.log(`Server started, PORT: ${PORT}`);
         console.log(`Connected to DB`)
     });
 })

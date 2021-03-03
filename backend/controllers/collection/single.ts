@@ -2,8 +2,8 @@ import {Request, Response} from 'express';
 import connection from "../../database_connection";
 
 export default (req: Request, res: Response) => {
-    const {collectionId} = req.params;
-    const showAllCollections = `SELECT * FROM Collections WHERE id=${collectionId};`
+    const {id} = req.params;
+    const showAllCollections = `SELECT * FROM Collections WHERE id=${id};`
     connection.query(showAllCollections, (err, result) => {
         if (err) res.json({
             code: 500,
