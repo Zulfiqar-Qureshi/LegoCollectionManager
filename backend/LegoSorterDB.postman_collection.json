@@ -158,6 +158,146 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Recognised Set",
+			"item": [
+				{
+					"name": "Create RecognisedSet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"collectionid\": 10,\r\n    \"setnumber\": \"9526\",\r\n    \"comments\": \"demo\",\r\n    \"instructions\": \"demo\",\r\n    \"condition\": \"demo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedsets",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all RecognisedSets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/recognisedsets",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all RecognisedSets By CollectionId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/collections/collectionid",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"collections",
+								"collectionid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update RecognisedSet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":113,\r\n    \"collectionid\": 10,\r\n    \"setnumber\": \"9526\",\r\n    \"comments\": \"demo\",\r\n    \"instructions\": \"demo\",\r\n    \"condition\": \"Update\",\r\n    \"status\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedsets/113",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets",
+								"113"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single RecognisedSet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedsets/113",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets",
+								"113"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single RecognisedSet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedsets/112",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets",
+								"112"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [

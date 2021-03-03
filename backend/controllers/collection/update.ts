@@ -21,7 +21,7 @@ export default (req: Request, res: Response) => {
             cost,
             porto,
             thumbnail_url,
-            status = 10,
+            status,
         } = req.body;
 
         if (
@@ -35,44 +35,32 @@ export default (req: Request, res: Response) => {
             porto) {
             //@ts-ignore
             jwt.verify(token, process.env.PRIVATE_KEY, (err, decoded: Token_encodeInterface) => {
-                const {username} = decoded;
-                const findUserInDB = `SELECT * FROM Users WHERE username='${username}'`;
-                connection.query(findUserInDB, (err, result: any) => {
+                const updateCollection = `UPDATE Collections SET name = '${name}',
+                                            weight_kg = ${weight_kg},
+                                            origin = '${origin}',
+                                            origin_url = '${origin_url}',
+                                            seller = '${seller}',
+                                            description = '${description}',
+                                            purchase_date = CURDATE(),
+                                            cost = ${cost},
+                                            porto = ${cost},
+                                            thumbnail_url = '${thumbnail_url}',
+                                            status = ${status},
+                                            WHERE id=${id}`;
+                connection.query(updateCollection, (err, result) => {
                     if (err) res.json({
                         code: 500,
-                        message: 'Some Error Occurred!',
-                        errorMessage: process.env.DEBUG && err
+                        message: 'Couldn\'t updated the collection',
+                        error: process.env.DEBUG && err
                     });
                     else {
-                        const {id: userId} = result[0];
-                        const createCollection = `UPDATE Collections SET name = '${name}',
-                                                  weight_kg = ${weight_kg},
-                                                  origin = '${origin}',
-                                                  origin_url = '${origin_url}',
-                                                  seller = '${seller}',
-                                                  description = '${description}',
-                                                  purchase_date = CURDATE(),
-                                                  cost = ${cost},
-                                                  porto = ${cost},
-                                                  thumbnail_url = '${thumbnail_url}',
-                                                  status = ${status},
-                                                  createdBy = ${userId} 
-                                                  WHERE id=${id}`;
-                        connection.query(createCollection, (err1, result1) => {
-                            if (err1) res.json({
-                                code: 500,
-                                message: 'Couldn\'t updated the collection',
-                                error: err1
-                            });
-                            else {
-                                res.json({
-                                    code: 100,
-                                    message: 'Collection updated!'
-                                });
-                            }
-                        })
+                        res.json({
+                            code: 100,
+                            message: 'Collection updated!'
+                        });
                     }
                 })
+
             })
         } else {
             res.json({
