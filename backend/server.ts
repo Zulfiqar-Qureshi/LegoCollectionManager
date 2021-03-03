@@ -29,7 +29,7 @@ app.use(cookieParser());
 /*
 * Middleware Routes
 */
-app.use('/user', user);
+app.use('/users', user);
 app.use('/collections', collection);
 app.use('/recognisedsets', recognisedset);
 app.use('/setdata', setdata);
