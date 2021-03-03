@@ -160,6 +160,128 @@
 			]
 		},
 		{
+			"name": "SetData",
+			"item": [
+				{
+					"name": "Download SetData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"setnumber\": \"8880\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/setdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh SetData",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"setid\":144\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/setdata/143",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata",
+								"143"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SetData",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/setdata/144",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata",
+								"144"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all SetData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/setdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single SetData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/setdata/47",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata",
+								"47"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Recognised Set",
 			"item": [
 				{
@@ -206,18 +328,19 @@
 					"response": []
 				},
 				{
-					"name": "Show all RecognisedSets By CollectionId",
+					"name": "Show RecognisedSets By CollectionId",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/collections/collectionid",
+							"raw": "{{URL}}/recognisedsets/collectionid/10",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"collections",
-								"collectionid"
+								"recognisedsets",
+								"collectionid",
+								"10"
 							]
 						}
 					},

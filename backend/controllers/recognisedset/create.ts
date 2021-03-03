@@ -49,10 +49,9 @@ export default (req: Request, res: Response) => {
                                                          '${instructions}',
                                                          '${condition}',
                                                           ${status},
-                                                         CURDATE(),
+                                                          NOW(),
                                                           ${id}
                                                         )`;
-                        console.log(createRecognisedSet)
                         connection.query(createRecognisedSet, (err1, result1) => {
                             if (err1) res.json({
                                 code: 500,

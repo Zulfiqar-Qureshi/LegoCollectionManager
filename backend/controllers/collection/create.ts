@@ -69,7 +69,7 @@ export default (req: Request, res: Response) => {
                                                           ${porto},
                                                          '${thumbnail_url}',
                                                           ${status},
-                                                         CURDATE(),
+                                                         NOW(),
                                                           ${id}
                                                         )`;
                         connection.query(createCollection, (err1, result1) => {

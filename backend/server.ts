@@ -13,6 +13,7 @@ const app: Application = Express();
 import user from "./routes/user";
 import collection from "./routes/collection";
 import recognisedset from "./routes/recognisedset";
+import setdata from "./routes/setdata";
 
 
 /*
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use('/user', user);
 app.use('/collections', collection);
 app.use('/recognisedsets', recognisedset);
+app.use('/setdata', setdata);
 
 
 const PORT = process.env.PORT || 4000;
