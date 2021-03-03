@@ -27,9 +27,9 @@ export default (req: Request, res: Response) => {
                         errorMessage: process.env.DEBUG && err
                     });
                     else {
-                        const findDetailedSetInDB = `SELECT * FROM Sets WHERE no='${setnumber}'`;
+                        const findSetDataInDB = `SELECT * FROM Sets WHERE no='${setnumber}'`;
 
-                        connection.query(findDetailedSetInDB, (err, setresult: any) => {
+                        connection.query(findSetDataInDB, (err, setresult: any) => {
                             if (err) res.json({
                                 code: 500,
                                 message: 'Some Error Occurred!',
@@ -49,7 +49,7 @@ export default (req: Request, res: Response) => {
                                     .then(function(setinfo:any){
                                         blApi.bricklinkClient.getPriceGuide(blApi.ItemType.Set, setnumber + '-1', {new_or_used: blApi.Condition.Used,  region: 'europe', guide_type: 'stock'})
                                         .then(function(priceinfo:any){
-                                            const createDetailedSet = `INSERT INTO Sets (
+                                            const createSetData = `INSERT INTO Sets (
                                             no,
                                             name,
                                             category_id,
@@ -84,13 +84,15 @@ export default (req: Request, res: Response) => {
                                              NOW(),
                                              ${id}
                                             )`;
-                                            connection.query(createDetailedSet, (err1, result1) => {
+                                            connection.query(createSetData, (err1, result1) => {
                                                 if (err1) res.json({
                                                     code: 500,
-                                                    message: 'Couldn\'t download the detailed set',
+                                                    message: 'Couldn\'t store downloaded the Setdata.',
                                                     errorMessage: process.env.DEBUG && err1
                                                 });
                                                 else {
+                                                  
+                                                  
                                                     res.json({
                                                         code: 100,
                                                         message: 'SetData successfully downloaded!',

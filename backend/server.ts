@@ -14,6 +14,7 @@ import user from "./routes/user";
 import collection from "./routes/collection";
 import recognisedset from "./routes/recognisedset";
 import setdata from "./routes/setdata";
+import partdata from "./routes/partdata";
 
 
 /*
@@ -32,6 +33,7 @@ app.use('/user', user);
 app.use('/collections', collection);
 app.use('/recognisedsets', recognisedset);
 app.use('/setdata', setdata);
+app.use('/partdata', partdata);
 
 
 const PORT = process.env.PORT || 4000;

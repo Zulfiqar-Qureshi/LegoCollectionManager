@@ -49,7 +49,7 @@ export default (req: Request, res: Response) => {
                                     .then(function(setinfo:any){
                                         blApi.bricklinkClient.getPriceGuide(blApi.ItemType.Set, no + '-1', {new_or_used: blApi.Condition.Used,  region: 'europe', guide_type: 'stock'})
                                         .then(function(priceinfo:any){
-                                            const createDetailedSet = `UPDATE Sets SET 
+                                            const updateSetData = `UPDATE Sets SET 
                                             name = '${setinfo.name}',
                                             category_id = '${setinfo.category_id}',
                                             year = '${setinfo.year_released}',
@@ -68,7 +68,7 @@ export default (req: Request, res: Response) => {
                                             WHERE id = ${setid}
                                             `;
 
-                                            connection.query(createDetailedSet, (err1, result1) => {
+                                            connection.query(updateSetData, (err1, result1) => {
                                                 if (err1) res.json({
                                                     code: 500,
                                                     message: 'Couldn\'t download the SetData',
