@@ -15,6 +15,8 @@ import collection from "./routes/collection";
 import recognisedset from "./routes/recognisedset";
 import setdata from "./routes/setdata";
 import partdata from "./routes/partdata";
+import category from "./routes/category";
+import color from "./routes/color";
 
 
 /*
@@ -34,6 +36,8 @@ app.use('/collections', collection);
 app.use('/recognisedsets', recognisedset);
 app.use('/setdata', setdata);
 app.use('/partdata', partdata);
+app.use('/categories', category);
+app.use('/colors', color);
 
 
 const PORT = process.env.PORT || 4000;
