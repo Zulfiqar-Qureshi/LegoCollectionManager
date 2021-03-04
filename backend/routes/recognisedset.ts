@@ -11,6 +11,7 @@ const route = Router();
 
 //List all sets
 route.get(``, UserAuthMiddleware, ShowAllSets);
+//List all sets by CollectionId
 route.get(`/collectionid/:collectionid`, UserAuthMiddleware, ShowAllSetsByCollectionId);
 //Create a new set
 route.post(``, AdminAuthMiddleware, CreateSet);

@@ -180,7 +180,7 @@
 					"response": []
 				},
 				{
-					"name": "Show all collections",
+					"name": "Show all Collections",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -197,7 +197,7 @@
 					"response": []
 				},
 				{
-					"name": "Show single collection",
+					"name": "Show single Collection",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -249,7 +249,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete single collection",
+					"name": "Delete single Collection",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -801,6 +801,291 @@
 							"path": [
 								"colors",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partimages",
+			"item": [
+				{
+					"name": "Create Partimage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"run_id\": 99,\r\n    \"path\": \"partimages/collection1/run99/1_1_2020-06-17_20_47_52_x718_y0.jpg\",\r\n    \"size_kb\": 3770,\r\n    \"x\": 736,\r\n    \"y\": 38,\r\n    \"w\": 114,\r\n    \"h\": 80,\r\n    \"blue\": 200,\r\n    \"green\": 20,\r\n    \"red\": 100,\r\n    \"color\": \"undefined\",\r\n    \"camera\" : \"brio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/partimages",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Partimages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/partimages",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show RecognisedSets By RunId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/partimages/runid/99",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages",
+								"runid",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Partimage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/partimages/53391",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages",
+								"53391"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Partimage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 53391,\r\n    \"run_id\": 99,\r\n    \"path\": \"partimages/collection1/run99/1_1_2020-06-17_20_47_52_x718_y0.jpg\",\r\n    \"size_kb\": 13770,\r\n    \"x\": 736,\r\n    \"y\": 38,\r\n    \"w\": 114,\r\n    \"h\": 80,\r\n    \"blue\": 200,\r\n    \"green\": 20,\r\n    \"red\": 100,\r\n    \"color\": \"undefined\",\r\n    \"camera\" : \"brio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/partimages/53391",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages",
+								"53391"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Partimage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/partimages/53391",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages",
+								"53391"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Deleted single Partimage",
+					"request": {
+						"method": "LOCK",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/partimages/53391",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"partimages",
+								"53391"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Price Data",
+			"item": [
+				{
+					"name": "Downlaod Prices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnumber\": \"2637\",\r\n    \"colorid\":\"11\",\r\n    \"type\":\"PART\",\r\n    \"condition\":\"used\",\r\n    \"region\":\"europe\",\r\n    \"guide_type\": \"stock\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/prices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/prices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/prices/24241",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices",
+								"24241"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Prices",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"priceid\":48860\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pricedata/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pricedata",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Prices",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/pricedata/24427",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pricedata",
+								"24427"
 							]
 						}
 					},

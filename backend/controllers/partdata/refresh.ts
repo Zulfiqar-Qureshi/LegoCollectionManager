@@ -76,7 +76,6 @@ export default (req: Request, res: Response) => {
                                                     createdBy = ${userid}
                                                     WHERE id = ${partid}
                                                     `;
-                                                    console.log(updatePartData)
                                                     connection.query(updatePartData, (err1, result1) => {
                                                         if (err1) res.json({
                                                             code: 500,

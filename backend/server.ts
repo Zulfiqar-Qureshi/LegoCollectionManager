@@ -17,6 +17,8 @@ import setdata from "./routes/setdata";
 import partdata from "./routes/partdata";
 import category from "./routes/category";
 import color from "./routes/color";
+import partimage from "./routes/partimage";
+import pricedata from "./routes/pricedata";
 
 
 /*
@@ -38,6 +40,8 @@ app.use('/setdata', setdata);
 app.use('/partdata', partdata);
 app.use('/categories', category);
 app.use('/colors', color);
+app.use('/partimages', partimage);
+app.use('/pricedata', pricedata);
 
 
 const PORT = process.env.PORT || 4000;
