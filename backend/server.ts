@@ -12,13 +12,16 @@ const app: Application = Express();
 */
 import user from "./routes/user";
 import collection from "./routes/collection";
-import recognisedset from "./routes/recognisedset";
+
 import setdata from "./routes/setdata";
 import partdata from "./routes/partdata";
 import category from "./routes/category";
 import color from "./routes/color";
 import partimage from "./routes/partimage";
 import pricedata from "./routes/pricedata";
+import recognisedset from "./routes/recognisedset";
+import recognisedimage from "./routes/recognisedimage";
+import recognisedpart from "./routes/recognisedpart";
 
 
 /*
@@ -35,13 +38,15 @@ app.use(cookieParser());
 */
 app.use('/users', user);
 app.use('/collections', collection);
-app.use('/recognisedsets', recognisedset);
 app.use('/setdata', setdata);
 app.use('/partdata', partdata);
 app.use('/categories', category);
 app.use('/colors', color);
 app.use('/partimages', partimage);
 app.use('/pricedata', pricedata);
+app.use('/recognisedsets', recognisedset);
+app.use('/recognisedimages', recognisedimage);
+app.use('/recognisedparts', recognisedpart);
 
 
 const PORT = process.env.PORT || 4000;
