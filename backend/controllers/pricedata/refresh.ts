@@ -35,7 +35,6 @@ export default (req: Request, res: Response) => {
                                 errorMessage: process.env.DEBUG && err
                             });
                             else{
-                                console.log(priceresult)
                                 if(priceresult == 'undefined' || priceresult.length == 0) res.json({
                                         code: 100,
                                         message: 'PriceData is not downloaded yet!',
