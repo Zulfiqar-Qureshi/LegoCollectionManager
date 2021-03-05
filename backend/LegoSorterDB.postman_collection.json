@@ -855,19 +855,19 @@
 					"response": []
 				},
 				{
-					"name": "Show RecognisedSets By RunId",
+					"name": "Show Partimages By RunId",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/partimages/runid/99",
+							"raw": "{{URL}}/partimages/runid/12",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"partimages",
 								"runid",
-								"99"
+								"12"
 							]
 						}
 					},
@@ -1043,7 +1043,7 @@
 					"response": []
 				},
 				{
-					"name": "Refresh Prices",
+					"name": "Refresh Price",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1086,6 +1086,45 @@
 							"path": [
 								"pricedata",
 								"24427"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh all Prices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchsize\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pricedata/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pricedata",
+								"all"
 							]
 						}
 					},
