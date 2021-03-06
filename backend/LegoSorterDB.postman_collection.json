@@ -865,12 +865,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/prices",
+							"raw": "{{URL}}/pricedata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"prices"
+								"pricedata"
 							]
 						}
 					},
@@ -1142,7 +1142,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"collectionid\": 10,\r\n    \"setnumber\": \"9526\",\r\n    \"comments\": \"demo\",\r\n    \"instructions\": \"demo\",\r\n    \"condition\": \"demo\"\r\n}",
+							"raw": "{\r\n    \"image_id\": 10,\r\n    \"part_id\": 9526,\r\n    \"score\": 100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1150,12 +1150,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/recognisedsets",
+							"raw": "{{URL}}/recognisedimages",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"recognisedsets"
+								"recognisedimages"
 							]
 						}
 					},
@@ -1167,12 +1167,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/recognisedsets",
+							"raw": "{{URL}}/recognisedimages",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"recognisedsets"
+								"recognisedimages"
 							]
 						}
 					},
@@ -1191,12 +1191,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/recognisedsets/113",
+							"raw": "{{URL}}/recognisedimages/113",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"recognisedsets",
+								"recognisedimages",
 								"113"
 							]
 						}
@@ -1272,7 +1272,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":3,\r\n    \"image_id\": 2,\r\n    \"part_id\": 2,\r\n    \"score\": 99\r\n}",
+							"raw": "{\r\n    \"id\":3,\r\n    \"image_id\": 3,\r\n    \"part_id\": 1,\r\n    \"score\": 100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1326,7 +1326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"run_id\": 99,\r\n    \"no\": 87745,\r\n    \"color_id\": 0,\r\n    \"score\" : 100,\r\n    \"identifier\" : \"human\"\r\n}",
+							"raw": "{\r\n    \"run_id\": 99,\r\n    \"no\": 87745,\r\n    \"color_id\": 12,\r\n    \"score\" : 100,\r\n    \"identifier\" : \"human\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1425,7 +1425,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":1,\r\n    \"run_id\": 99,\r\n    \"no\": 87745,\r\n    \"color_id\": 0,\r\n    \"score\" : 100,\r\n    \"identifier\" : \"human\"\r\n}",
+							"raw": "{\r\n    \"id\":6240,\r\n    \"run_id\": 100,\r\n    \"no\": 87745,\r\n    \"color_id\": 99,\r\n    \"score\" : 100,\r\n    \"identifier\" : \"human\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1433,13 +1433,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/recognisedparts/113",
+							"raw": "{{URL}}/recognisedparts/6240",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"recognisedparts",
-								"113"
+								"6240"
 							]
 						}
 					},
@@ -1455,19 +1455,522 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/recognisedparts/112",
+							"raw": "{{URL}}/recognisedparts/6240",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"recognisedparts",
-								"112"
+								"6240"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Run",
+			"item": [
+				{
+					"name": "Create Run",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no\":1,\r\n    \"collection_id\": 99,\r\n    \"sorter_id\": 1,\r\n    \"imagefolder\": \"testfolder\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/runs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Runs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/runs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Runs by collectionid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/runs/collectionid/99",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs",
+								"collectionid",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Run",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/runs/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Run",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":16,\r\n    \"no\":2,\r\n    \"collection_id\": 99,\r\n    \"sorter_id\": 1,\r\n    \"imagefolder\": \"testfolder2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/runs/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Run",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/runs/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runs",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RunStatus",
+			"item": [
+				{
+					"name": "Create RunStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"run_id\":99,\r\n    \"status\": 99,\r\n    \"reason\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/runstatus",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all RunStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/runstatus",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single RunStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/runstatus/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update RunStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":16,\r\n    \"run_id\":99,\r\n    \"status\": 99,\r\n    \"reason\": \"test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/runstatus/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single RunStatus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/runstatus/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sorters",
+			"item": [
+				{
+					"name": "Create Sorter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TestSorter\",\r\n    \"lifter_status_url\": \"lifter_status_url\",\r\n    \"lifter_update_url\": \"lifter_update_url\",\r\n    \"lifter_alterspeed_url\": \"lifter_alterspeed_url\",\r\n    \"vfeeder_status_url\": \"vfeeder_status_url\",\r\n    \"vfeeder_update_url\": \"vfeeder_update_url\",\r\n    \"vfeeder_alterspeed_url\": \"vfeeder_alterspeed_url\",\r\n    \"conveyor_status_url\": \"conveyor_status_url\",\r\n    \"conveyor_update_url\": \"conveyor_update_url\",\r\n    \"conveyor_alterspeed_url\": \"conveyor_alterspeed_url\",\r\n    \"pusher_count\": 10,\r\n    \"pusher_status_baseurl\": \"pusher_status_baseurl\",\r\n    \"pusher_mode_baseurl\": \"pusher_mode_baseurl\",\r\n    \"status\": \"status\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/sorters",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Sorters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/sorters",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Sorter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/sorters/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sorter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"name\":\"TestSorter3333\",\r\n    \"lifter_status_url\": \"lifter_status_url\",\r\n    \"lifter_update_url\": \"lifter_update_url\",\r\n    \"lifter_alterspeed_url\": \"lifter_alterspeed_url\",\r\n    \"vfeeder_status_url\": \"vfeeder_status_url\",\r\n    \"vfeeder_update_url\": \"vfeeder_update_url\",\r\n    \"vfeeder_alterspeed_url\": \"vfeeder_alterspeed_url\",\r\n    \"conveyor_status_url\": \"conveyor_status_url\",\r\n    \"conveyor_update_url\": \"conveyor_update_url\",\r\n    \"conveyor_alterspeed_url\": \"conveyor_alterspeed_url\",\r\n    \"pusher_count\": 10,\r\n    \"pusher_status_baseurl\": \"pusher_status_baseurl\",\r\n    \"pusher_mode_baseurl\": \"pusher_mode_baseurl\",\r\n    \"status\": \"status\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/sorters/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Sorter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/sorters/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Create Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TestSorter\",\r\n    \"typeid\": 1,\r\n    \"description\": \"testdescription\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/status",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/status",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/status/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"status",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":99,\r\n    \"no\":1,\r\n    \"collection_id\": 99,\r\n    \"sorter_id\": 1,\r\n    \"imagefolder\": \"testfolder\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/runstatus/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"runstatus",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Status",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/sorters/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"sorters",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubSets",
+			"item": []
+		},
+		{
+			"name": "SuperSets",
+			"item": []
+		},
+		{
+			"name": "UserGroups",
+			"item": []
 		}
 	],
 	"event": [

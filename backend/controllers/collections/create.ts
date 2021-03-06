@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import jwt from 'jsonwebtoken';
 import connection from "../../database_connection";
-import {Token_encodeInterface} from './../middleware/token_encode.interface';
+import {Token_encodeInterface} from '../middleware/token_encode.interface';
 
 //JS to MYSQL date
 //new Date().toISOString().slice(0, 19).replace('T', ' ');

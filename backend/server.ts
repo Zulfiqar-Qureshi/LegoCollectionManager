@@ -22,6 +22,10 @@ import pricedata from "./routes/pricedata";
 import recognisedset from "./routes/recognisedset";
 import recognisedimage from "./routes/recognisedimage";
 import recognisedpart from "./routes/recognisedpart";
+import run from "./routes/run";
+import runstatus from "./routes/runstatus";
+import sorter from "./routes/sorter";
+import status from "./routes/status";
 
 
 /*
@@ -47,6 +51,10 @@ app.use('/pricedata', pricedata);
 app.use('/recognisedsets', recognisedset);
 app.use('/recognisedimages', recognisedimage);
 app.use('/recognisedparts', recognisedpart);
+app.use('/runs', run);
+app.use('/runstatus', runstatus);
+app.use('/sorters', sorter);
+app.use('/status', status);
 
 
 const PORT = process.env.PORT || 4000;
