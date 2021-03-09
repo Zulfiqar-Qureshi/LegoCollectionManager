@@ -13,9 +13,9 @@ const route = Router();
 //List all RecognisedImages
 route.get(``, UserAuthMiddleware, ShowAllRecognisedImages);
 //List all RecognisedImages by RunId
-route.get(`/runid/:runid`, UserAuthMiddleware, ShowAllRecognisedImagesByRunId);
+route.get(`/run/:runid`, UserAuthMiddleware, ShowAllRecognisedImagesByRunId);
 //List all RecognisedImages by PartId
-route.get(`/partid/:partid`, UserAuthMiddleware, ShowAllRecognisedImagesByPartId);
+route.get(`/part/:partid`, UserAuthMiddleware, ShowAllRecognisedImagesByPartId);
 //Create a new RecognisedImage
 route.post(``, AdminAuthMiddleware, CreateRecognisedImage);
 //Show info about a RecognisedImage

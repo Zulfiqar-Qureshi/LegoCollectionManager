@@ -26,6 +26,8 @@ import run from "./routes/run";
 import runstatus from "./routes/runstatus";
 import sorter from "./routes/sorter";
 import status from "./routes/status";
+import subsetdata from "./routes/subsetdata";
+import suggestedset from "./routes/suggestedset";
 
 
 /*
@@ -55,6 +57,8 @@ app.use('/runs', run);
 app.use('/runstatus', runstatus);
 app.use('/sorters', sorter);
 app.use('/status', status);
+app.use('/subsetdata', subsetdata);
+app.use('/suggestedsets', suggestedset);
 
 
 const PORT = process.env.PORT || 4000;

@@ -11,6 +11,7 @@ export default (req: Request, res: Response) => {
             errorMessage: process.env.DEBUG && err
         });
         else {
+            
             res.json(result);
         }
     })

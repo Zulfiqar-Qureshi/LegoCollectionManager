@@ -1068,14 +1068,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/recognisedsets/collectionid/10",
+							"raw": "{{URL}}/recognisedsets/collection/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"recognisedsets",
-								"collectionid",
-								"10"
+								"collection",
+								"1"
 							]
 						}
 					},
@@ -1125,6 +1125,55 @@
 							"path": [
 								"recognisedsets",
 								"112"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show RecognisedSetInfo by",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedsets/113",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedsets",
+								"113"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suggested Set",
+			"item": [
+				{
+					"name": "Show Sugget Sets by CollectionId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/suggestedsets/collection/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"suggestedsets",
+								"collection",
+								"1"
 							]
 						}
 					},
@@ -1405,14 +1454,46 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}/recognisedparts/runid/12",
+							"raw": "{{URL}}/recognisedparts/run/12",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"recognisedparts",
-								"runid",
+								"run",
 								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Unsetted Parts by collectionid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/recognisedparts/collection/1/unsetted",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"recognisedparts",
+								"collection",
+								"1",
+								"unsetted"
 							]
 						}
 					},
@@ -1961,12 +2042,166 @@
 			]
 		},
 		{
-			"name": "SubSets",
-			"item": []
-		},
-		{
-			"name": "SuperSets",
-			"item": []
+			"name": "Subset Data",
+			"item": [
+				{
+					"name": "Download SubsetData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"setnumber\": \"8880\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/subsetdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subsetdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all SubsetData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/setdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Parts By CollectionId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/subsetdata/collection/1/parts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subsetdata",
+								"collection",
+								"1",
+								"parts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Minifigs By CollectionId Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/subsetdata/collection/1/minifigs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subsetdata",
+								"collection",
+								"1",
+								"minifigs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single SubsetData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/setdata/145",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata",
+								"145"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh SubsetData",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"setid\":145\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/setdata/145",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"setdata",
+								"145"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SubsetData",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/subsetdata/145",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"subsetdata",
+								"145"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "UserGroups",

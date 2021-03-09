@@ -87,7 +87,7 @@ export default (req: Request, res: Response) => {
                                             connection.query(createSetData, (err1, result1) => {
                                                 if (err1) res.json({
                                                     code: 500,
-                                                    message: 'Couldn\'t store downloaded the Setdata.',
+                                                    message: 'Couldn\'t store downloaded Setdata.',
                                                     errorMessage: process.env.DEBUG && err1
                                                 });
                                                 else {

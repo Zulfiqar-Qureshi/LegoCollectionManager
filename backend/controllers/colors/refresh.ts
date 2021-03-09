@@ -36,7 +36,7 @@ export default (req: Request, res: Response) => {
                                 id])
                             });
                                 colorsReplace.forEach(element => {
-                                let InsertColors = `INSERT INTO Colors (
+                                let insertColors = `INSERT INTO Colors (
                                     color_id,
                                     color_name,
                                     color_code,
@@ -45,7 +45,7 @@ export default (req: Request, res: Response) => {
                                     VALUES (
                                     ? )
                                      ON DUPLICATE KEY UPDATE id=id`; 
-                                connection.query(InsertColors,[element], (err) => {
+                                connection.query(insertColors,[element], (err) => {
                                     if (err) {
                                         console.log(err)
                                         res.json({

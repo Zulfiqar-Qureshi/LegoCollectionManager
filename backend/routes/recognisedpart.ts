@@ -2,6 +2,8 @@ import CreateRecognisedPart from '../controllers/recognisedparts/create';
 import ShowAllRecognisedParts from '../controllers/recognisedparts/show';
 import ShowAllRecognisedPartsByRunId from '../controllers/recognisedparts/showByRunId';
 import ShowAllRecognisedPartsByPartId from '../controllers/recognisedparts/showByPartId';
+import ShowAllUnsettedRecognisedPartsByCollectionId from '../controllers/recognisedparts/showUnsettedByCollectionId';
+
 import UpdateRecognisedPartById from '../controllers/recognisedparts/update';
 import GetSingleRecognisedPartById from '../controllers/recognisedparts/single';
 import DeleteSingleRecognisedPartById from '../controllers/recognisedparts/delete';
@@ -15,7 +17,9 @@ route.get(``, UserAuthMiddleware, ShowAllRecognisedParts);
 //List all RecognisedParts by RunId
 route.get(`/runid/:runid`, UserAuthMiddleware, ShowAllRecognisedPartsByRunId);
 //List all RecognisedParts by PartId
-route.get(`/partid/:partid`, UserAuthMiddleware, ShowAllRecognisedPartsByPartId);
+route.get(`/part/:partid`, UserAuthMiddleware, ShowAllRecognisedPartsByPartId);
+
+route.get(`/collection/:collectionid/unsetted`, UserAuthMiddleware, ShowAllUnsettedRecognisedPartsByCollectionId);
 //Create a new RecognisedPart
 route.post(``, AdminAuthMiddleware, CreateRecognisedPart);
 //Show info about a RecognisedPart

@@ -13,7 +13,7 @@ const route = Router();
 //List all Runs
 route.get(``, UserAuthMiddleware, ShowAllRuns);
 //List all Runs by collectionid
-route.get(`/collectionid/:collectionid`, UserAuthMiddleware, ShowAllRunsByCollectionId);
+route.get(`/collection/:collectionid`, UserAuthMiddleware, ShowAllRunsByCollectionId);
 //Create a new Run
 route.post(``, AdminAuthMiddleware, CreateRun);
 //Show info about a specific Run
