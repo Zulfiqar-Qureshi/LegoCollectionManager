@@ -34,7 +34,7 @@ export default (req: Request, res: Response) => {
                     });
                     else {
                         res.json({
-                            code: 100,
+                            code: 200,
                             message: 'Run updated!'
                         });
                     }
@@ -43,7 +43,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'id, no, collection_id, sorter_id and imagefolder are required!'
             });
         }

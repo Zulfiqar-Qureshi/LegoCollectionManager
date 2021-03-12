@@ -37,7 +37,7 @@ export default (req: Request, res: Response) => {
                             else{
                                 console.log(partresult)
                                 if(partresult == 'undefined' || partresult.length == 0) res.json({
-                                        code: 100,
+                                        code: 202,
                                         message: 'PartData is not downloaded yet!',
                                         //@ts-ignore
                                         errorMessage: process.env.DEBUG && err
@@ -85,7 +85,7 @@ export default (req: Request, res: Response) => {
                                                         else {
 
                                                             res.json({
-                                                                code: 100,
+                                                                code: 201,
                                                                 message: 'PartData successfully downloaded and refreshed!',
                                                                 "priceinfostockdata": priceinfostockdata,
                                                                 "priceinfosolddata" : priceinfosolddata
@@ -103,7 +103,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Setnumber is required!'
             });
         }

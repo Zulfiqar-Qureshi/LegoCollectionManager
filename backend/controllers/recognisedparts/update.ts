@@ -36,7 +36,7 @@ export default (req: Request, res: Response) => {
                     });
                     else {
                         res.json({
-                            code: 100,
+                            code: 200,
                             message: 'Recognised Parts updated!'
                         });
                     }
@@ -44,7 +44,7 @@ export default (req: Request, res: Response) => {
             })  
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'id, run_id, no, color_id, score and identifier are required!'
             });
         }

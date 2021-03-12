@@ -9,7 +9,7 @@ export default (req: Request, res: Response, next: NextFunction)=>{
         jwt.verify(token, process.env.PRIVATE_KEY, (err, decoded: Token_encodeInterface) => {
             if(err){
                 res.json({
-                    code: 500,
+                    code: 403,
                     message: 'Invalid Token'
                 });
             } else {
@@ -17,7 +17,7 @@ export default (req: Request, res: Response, next: NextFunction)=>{
                     next();
                 } else {
                     res.json({
-                        code: 500,
+                        code: 403,
                         message: 'This token was not signed for admin.'
                     });
                 }

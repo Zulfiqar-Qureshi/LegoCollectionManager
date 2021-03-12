@@ -36,7 +36,7 @@ export default (req: Request, res: Response) => {
                             });
                             else{
                                 if(priceresult == 'undefined' || priceresult.length == 0) res.json({
-                                        code: 100,
+                                        code: 202,
                                         message: 'PriceData is not downloaded yet!',
                                         //@ts-ignore
                                         errorMessage: process.env.DEBUG && err
@@ -90,7 +90,7 @@ export default (req: Request, res: Response) => {
                                                     else {
 
                                                         res.json({
-                                                            code: 100,
+                                                            code: 201,
                                                             message: 'PriceData successfully downloaded and refreshed!',
                                                             "priceinfo": priceinfo
                                                         });
@@ -107,7 +107,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Setnumber is required!'
             });
         }

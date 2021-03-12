@@ -79,7 +79,7 @@ export default (req: Request, res: Response) => {
                     errorMessage: process.env.DEBUG && err
                 });
                 res.json({
-                    code: 100,
+                    code: 200,
                     summarized : runsumResults,
                     unique : runniqueResults,
                     runs : runStatisticResults

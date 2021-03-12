@@ -31,7 +31,7 @@ export default (req: Request, res: Response) => {
                     });
                     else {
                         res.json({
-                            code: 100,
+                            code: 200,
                             message: 'RunStatus updated!'
                         });
                     }
@@ -40,7 +40,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'id, run_id, status, reason are required!'
             });
         }

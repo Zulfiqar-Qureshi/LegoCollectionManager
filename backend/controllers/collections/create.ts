@@ -80,7 +80,7 @@ export default (req: Request, res: Response) => {
                             });
                             else {
                                 res.json({
-                                    code: 100,
+                                    code: 201,
                                     message: 'Collection created!'
                                 });
                             }
@@ -90,7 +90,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'All fields are required!'
             });
         }

@@ -44,7 +44,7 @@ export default (req: Request, res: Response) => {
                             });
                             
                     res.json({
-                        code: 100,
+                        code: 200,
                         summarized : summarizedResults,
                         unique : uniquePartsResults,
                         sets : setsResult

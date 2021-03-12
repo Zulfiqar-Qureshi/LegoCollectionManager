@@ -55,7 +55,7 @@ export default (req: Request, res: Response) => {
                             });
                             else {
                                 res.json({
-                                    code: 100,
+                                    code: 201,
                                     message: 'Recognised parts created!'
                                 });
                             }
@@ -65,7 +65,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'run_id, no, color_id, score and identifier are required!'
             });
         }

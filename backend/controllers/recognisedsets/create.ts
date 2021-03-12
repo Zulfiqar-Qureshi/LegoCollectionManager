@@ -60,7 +60,7 @@ export default (req: Request, res: Response) => {
                             });
                             else {
                                 res.json({
-                                    code: 100,
+                                    code: 201,
                                     message: 'Recognised set created!'
                                 });
                             }
@@ -70,7 +70,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Setnumber, Instructions and collectionid are required!'
             });
         }

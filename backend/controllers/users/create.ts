@@ -27,7 +27,7 @@ export default (req: Request, res: Response) => {
                 const findUserInDB = `SELECT * FROM Users WHERE username='${currentusernme}'`;
                 connection.query(findUserInDB, (err, result: any) => {
                     if (err) res.json({
-                        code: 500,
+                        code: 400,
                         message: 'Some Error Occurred!',
                         //@ts-ignore
                         errorMessage: process.env.DEBUG && err
@@ -56,7 +56,7 @@ export default (req: Request, res: Response) => {
                             });
                             else {
                                 res.json({
-                                    code: 100,
+                                    code: 201,
                                     message: 'new User created'
                                 });
                             }
@@ -66,7 +66,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'username, password, full_name and usergroup are required!'
             });
         }

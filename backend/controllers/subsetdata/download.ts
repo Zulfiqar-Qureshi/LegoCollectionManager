@@ -39,7 +39,7 @@ export default (req: Request, res: Response) => {
                             });
                             else{
                                 if(subsetresult !== 'undefined' && subsetresult.length > 0) res.json({
-                                        code: 100,
+                                        code: 202,
                                         message: 'subsetdata information was already downloaded!',
                                         //@ts-ignore
                                         errorMessage: process.env.DEBUG && err
@@ -101,7 +101,7 @@ export default (req: Request, res: Response) => {
                                                 });
                                             });
                                             res.json({
-                                                code: 100,
+                                                code: 201,
                                                 message: 'Subsetdata successfully downloaded!',
                                             });
                                     });
@@ -113,7 +113,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Setnumber is required!'
             });
         }

@@ -39,7 +39,7 @@ export default (req: Request, res: Response) => {
                     });
                     else {
                         res.json({
-                            code: 100,
+                            code: 200,
                             message: 'Recognisedsets updated!'
                         });
                     }
@@ -47,7 +47,7 @@ export default (req: Request, res: Response) => {
             })  
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'collectionid, setnumber, status and instructions are required!'
             });
         }

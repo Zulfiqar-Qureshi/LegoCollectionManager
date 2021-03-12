@@ -38,7 +38,7 @@ export default (req: Request, res: Response) => {
                             });
                             else{
                                 if(setresult !== 'undefined' && setresult.length > 0) res.json({
-                                        code: 100,
+                                        code: 202,
                                         message: 'SetData information was already downloaded!',
                                         //@ts-ignore
                                         errorMessage: process.env.DEBUG && err
@@ -94,7 +94,7 @@ export default (req: Request, res: Response) => {
                                                   
                                                   
                                                     res.json({
-                                                        code: 100,
+                                                        code: 201,
                                                         message: 'SetData successfully downloaded!',
                                                         "setinfo": setinfo,
                                                         "priceinfo" : priceinfo
@@ -111,7 +111,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Setnumber is required!'
             });
         }

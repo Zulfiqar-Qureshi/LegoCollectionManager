@@ -56,7 +56,7 @@ export default (req: Request, res: Response) => {
                                 });
                             }) 
                     res.json({
-                        code: 100,
+                        code: 201,
                         message: `Colors successfully downloaded!`,
                     });
                 });

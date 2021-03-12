@@ -17,13 +17,13 @@ export default (req: Request, res: Response)=>{
 
     if(username && password) {
         const sqlQuery = `SELECT groupname FROM LegoSorterDB.Users u
-        LEFT JOIN Usergroups ug ON ug.groupid = u.usergroup
+        LEFT JOIN Usergroups ug ON ug.id = u.usergroup
         WHERE username='${username}' AND password='${password}'`;
-
+        console.log(sqlQuery)
         connection.query(sqlQuery, (err, result:any) => {
             if(err) res.json({
                 code: 500,
-                message: 'Query failed'
+                message: 'Query failed!'
             });
             else {
                 if(result !== 'undefined' && result.length > 0){
@@ -48,7 +48,7 @@ export default (req: Request, res: Response)=>{
                                 })
                                 res.json({
                                     message: `login as ${groupname} successful`,
-                                    code: 100
+                                    code: 200
                                 })
                             } else {
                                 res.cookie('token', token, {
@@ -57,14 +57,14 @@ export default (req: Request, res: Response)=>{
                                 })
                                 res.json({
                                     message: `login as ${groupname} successful`,
-                                    code: 100
+                                    code: 200
                                 })
                             }
                         }
                     })
                 }else{
                     res.json({
-                        code: 500,
+                        code: 403,
                         message: 'Username or password invalid!'
                     });
                 }
@@ -73,7 +73,7 @@ export default (req: Request, res: Response)=>{
         })
     } else {
         res.json({
-            code: 500,
+            code: 400,
             message: 'Username and password is required!'
         });
     }

@@ -36,7 +36,7 @@ export default (req: Request, res: Response) => {
                             });
                             else{
                                 if(allpricesresult == 'undefined' || allpricesresult.length == 0) res.json({
-                                        code: 100,
+                                        code: 202,
                                         message: 'no existing PriceData found that is not up to date!',
                                         //@ts-ignore
                                         errorMessage: process.env.DEBUG && err
@@ -96,7 +96,7 @@ export default (req: Request, res: Response) => {
                                         });
                                     });
                                     res.json({
-                                        code: 100,
+                                        code: 201,
                                         message: 'PriceData successfully downloaded and refreshed!'
                                     }); 
                                 }
@@ -107,7 +107,7 @@ export default (req: Request, res: Response) => {
             })
         } else {
             res.json({
-                code: 500,
+                code: 400,
                 message: 'Batchsize is required!'
             });
         }

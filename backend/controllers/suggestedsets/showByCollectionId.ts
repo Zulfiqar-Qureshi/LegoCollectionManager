@@ -24,7 +24,7 @@ export default (req: Request, res: Response) => {
         });
         else {
             res.json({
-            code: 100,
+            code: 200,
             setsResult : setsResult
         });
 
