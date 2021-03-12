@@ -28,6 +28,9 @@ import sorter from "./routes/sorter";
 import status from "./routes/status";
 import subsetdata from "./routes/subsetdata";
 import suggestedset from "./routes/suggestedset";
+import supersetdata from "./routes/supersetdata";
+import types from "./routes/types";
+import usergroups from "./routes/usergroups";
 
 
 /*
@@ -59,6 +62,9 @@ app.use('/sorters', sorter);
 app.use('/status', status);
 app.use('/subsetdata', subsetdata);
 app.use('/suggestedsets', suggestedset);
+app.use('/supersetdata', supersetdata);
+app.use('/types', types);
+app.use('/usergroups', usergroups);
 
 
 const PORT = process.env.PORT || 4000;

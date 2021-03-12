@@ -91,13 +91,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/users/3",
+							"raw": "{{URL}}/users/2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"users",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -331,13 +331,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/setdata/145",
+							"raw": "{{URL}}/setdata/47",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"setdata",
-								"145"
+								"47"
 							]
 						}
 					},
@@ -1933,7 +1933,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"TestSorter\",\r\n    \"typeid\": 1,\r\n    \"description\": \"testdescription\"\r\n}",
+							"raw": "{\r\n    \"code\": 10,\r\n    \"name\":\"TestSorter\",\r\n    \"typeid\": 1,\r\n    \"description\": \"testdescription\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2204,8 +2204,354 @@
 			]
 		},
 		{
-			"name": "UserGroups",
-			"item": []
+			"name": "Superset Data",
+			"item": [
+				{
+					"name": "Download Superset Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partnumber\": \"3009\",\r\n    \"colorid\" : \"3\",\r\n    \"refresh\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/supersetdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"supersetdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Superset Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/supersetdata",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"supersetdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Sets By PartId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/supersetdata/part/3961",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"supersetdata",
+								"part",
+								"3961"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Superset Data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/supersetdata/145",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"supersetdata",
+								"145"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Superset Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/supersetdata/516240",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"supersetdata",
+								"516240"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Types",
+			"item": [
+				{
+					"name": "Create Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Collection\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/types",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/types",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/types/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"types",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5,\r\n    \"name\":\"Collection2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/types/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"types",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/types/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"types",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usergroups",
+			"item": [
+				{
+					"name": "Create Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupname\": \"collector\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usergroups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usergroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usergroups",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usergroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/usergroups/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usergroups",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"groupname\":\"collector\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/usergroups/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usergroups",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/usergroups/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"usergroups",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [

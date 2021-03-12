@@ -11,12 +11,14 @@ export default (req: Request, res: Response) => {
     try {
         const {token} = req.cookies;
         const {
+            code,
             name,
             typeid,
             description
         } = req.body;
 
-        if ( name &&
+        if (code &&
+             name &&
             typeid &&
             description
              ) {
@@ -33,11 +35,13 @@ export default (req: Request, res: Response) => {
                     });
                     else {
                         const {id} = result[0];
-                        const createStatus = `INSERT INTO Status(name,
+                        const createStatus = `INSERT INTO Status(code,
+                                                  name,
                                                   typeid,
                                                   description,
                                                   createdBy)
                                                   VALUES(
+                                                          ${code},
                                                          '${name}',
                                                           ${typeid},
                                                          '${description}',
